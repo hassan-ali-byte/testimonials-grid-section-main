@@ -1,0 +1,252 @@
+/* CSS reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/* Variables*/
+
+:root {
+  /* Primary Colors */
+
+  --primary-50: hsl(260, 100%, 95%);
+  --primary-300: hsl(264, 82%, 80%);
+  --primary-500: hsl(263, 55%, 52%);
+
+  /* Neutral Color */
+
+  --neutral-0: hsl(0, 0%, 100%);
+  --neutral-100: hsl(214, 17%, 92%);
+  --neutral-200: hsl(0, 0%, 81%);
+  --neutral-400: hsl(224, 10%, 45%);
+  --neutral-500: hsl(217, 19%, 35%);
+  --neutral-700: hsl(219, 29%, 14%);
+  --neutral-900: hsl(0, 0%, 7%);
+
+  /* font stuff*/
+  --ff-base: "Barlow Semi Condensed", sans-serif;
+
+  --fw-regular: 400;
+  --fw-bold: 600;
+}
+/* base styling */
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  background-color: var(--neutral-0);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  color: var(--neutral-500);
+  font-size: 13px;
+}
+/* testimonials container */
+.testimonials {
+  max-width: 525px;
+  display: grid;
+  grid-template-areas:
+    "testimonial-1"
+    "testimonial-2"
+    "testimonial-3"
+    "testimonial-4"
+    "testimonial-5";
+  gap: 1rem;
+  margin: 2rem;
+}
+
+/* grid areas */
+
+.testimonial:nth-child(1) {
+  grid-area: testimonial-1;
+}
+.testimonial:nth-child(2) {
+  grid-area: testimonial-2;
+}
+.testimonial:nth-child(3) {
+  grid-area: testimonial-3;
+}
+.testimonial:nth-child(4) {
+  grid-area: testimonial-4;
+}
+.testimonial:nth-child(5) {
+  grid-area: testimonial-5;
+}
+
+/* component styling */
+
+.testimonial {
+  display: grid;
+  gap: 1rem;
+  padding: 2em;
+  border-radius: 0.5rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.testimonial-img-wrapper img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--primary-300);
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.testimonial-body {
+  display: grid;
+  gap: 1rem;
+}
+
+/* primary testimonial */
+
+.testimonial-purple {
+  background-color: var(--primary-500);
+  color: var(--neutral-200);
+}
+
+.testimonial-purple .testimonial-highlight {
+  color: var(--neutral-0);
+}
+
+.testimonial-grey {
+  background-color: var(--neutral-500);
+  color: var(--neutral-200);
+}
+
+.testimonial-grey .testimonial-highlight {
+  color: var(--neutral-0);
+}
+
+.testimonial-dark-blue {
+  background-color: var(--neutral-700);
+  color: var(--neutral-200);
+}
+
+/* typography */
+
+.testimonial-name {
+  font-size: clamp(1rem, 0.929rem + 0.19vw, 1.1rem);
+  font-weight: var(--fw-bold);
+}
+
+.testimonial-highlight {
+  font-size: clamp(1rem, 0.714rem + 0.762vw, 1.4rem);
+  font-weight: var(--fw-bold);
+}
+/* footer */
+
+footer {
+  margin: 0 2rem;
+  text-align: center;
+}
+.attribution a {
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: var(--fw-bold);
+  background: linear-gradient(to right, hsl(263, 55%, 52%), hsl(219, 29%, 14%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* @media queries */
+
+@media (min-width: 37em) {
+  .testimonials {
+    max-width: 800px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "testimonial-1 testimonial-1 "
+      "testimonial-2 testimonial-5 "
+      "testimonial-3  testimonial-5"
+      "testimonial-4 testimonial-4 ";
+  }
+  .testimonial-purple {
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: right 25px top -5px;
+  }
+}
+@media (min-width: 59em) {
+  .testimonials {
+    max-width: 1100px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "testimonial-1 testimonial-1 testimonial-2 testimonial-5 "
+      "testimonial-3 testimonial-4 testimonial-4 testimonial-5 ";
+    margin: 1rem;
+  }
+
+  .testimonial-highlight {
+    line-height: 1.2;
+  }
+  .testimonial:nth-child(3) {
+    line-height: 1.7;
+  }
+}
