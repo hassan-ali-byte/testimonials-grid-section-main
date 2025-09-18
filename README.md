@@ -31,7 +31,7 @@ Users should be able to:
 
 ## 🌐 Live Demo
 
-👉 [View Live Demo](https://hassan-ali-byte.github.io/testimonials-grid-section-master/)
+👉 [View Live Demo](https://hassan-ali-byte.github.io/testimonials-grid-section-main/)
 
 ---
 
