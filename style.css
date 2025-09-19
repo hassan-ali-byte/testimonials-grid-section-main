@@ -243,7 +243,9 @@ footer {
     margin: 1rem;
   }
 
-  .testimonial-highlight {
+ 
+  .testimonial-highlight,
+  .testimonial-info {
     line-height: 1.2;
   }
   .testimonial:nth-child(3) {
