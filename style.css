@@ -233,7 +233,7 @@ footer {
     background-position: right 25px top -5px;
   }
 }
-@media (min-width: 59em) {
+@media (min-width: 63em) {
   .testimonials {
     max-width: 1100px;
     grid-template-columns: repeat(4, 1fr);
